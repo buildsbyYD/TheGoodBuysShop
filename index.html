@@ -4,45 +4,310 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TheGoodBuysShop LLC</title>
+<meta name="description" content="TheGoodBuysShop LLC — Android apps, digital templates, and resale. Built and run by one person." />
 <meta name="google-site-verification" content="wj04EVO8ND4NNkGh_drPdYH6cU08vMMSAAliqli1src" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #fff; color: #1a1a1a; font-family: 'DM Sans', sans-serif; }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem; }
-  .logo { font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 400; letter-spacing: -0.5px; }
-  .logo span { color: #888; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; font-weight: 300; display: block; margin-top: 6px; letter-spacing: 2px; text-transform: uppercase; }
-  .divider { width: 40px; height: 1.5px; background: #1a1a1a; margin: 1.5rem 0; }
-  .desc { font-size: 1rem; line-height: 1.8; color: #555; max-width: 480px; margin: 0 0 2.5rem; font-weight: 300; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: #e5e5e5; border: 1px solid #e5e5e5; margin: 0 0 2.5rem; }
-  .card { background: #fff; padding: 1.25rem; }
-  .card-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; margin: 0 0 6px; }
-  .card-val { font-size: 14px; font-weight: 500; color: #1a1a1a; }
-  .links { display: flex; flex-direction: column; gap: 0; }
-  .link { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555; text-decoration: none; padding: 12px 0; border-bottom: 0.5px solid #e5e5e5; font-weight: 300; }
-  .link:last-child { border-bottom: none; }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: #1a1a1a; flex-shrink: 0; }
-  .contact { margin-top: 2.5rem; font-size: 13px; color: #aaa; font-weight: 300; }
-  .contact a { color: #555; text-decoration: none; }
+
+  :root {
+    --bg: #fff;
+    --text: #1a1a1a;
+    --muted: #666;
+    --faint: #aaa;
+    --border: #e5e5e5;
+    --surface: #f7f7f5;
+    --accent: #1a1a1a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111;
+      --text: #f0f0f0;
+      --muted: #999;
+      --faint: #555;
+      --border: #2a2a2a;
+      --surface: #1a1a1a;
+      --accent: #f0f0f0;
+    }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 3rem;
+  }
+
+  /* ── Header ── */
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    line-height: 1.1;
+  }
+
+  .logo-meta {
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--faint);
+    font-weight: 400;
+  }
+
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: var(--faint);
+    margin: 1.75rem 0;
+  }
+
+  /* ── About ── */
+  .about {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 460px;
+    font-weight: 300;
+    margin-bottom: 2.75rem;
+  }
+
+  /* ── Tag pills ── */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 2.75rem;
+  }
+
+  .pill {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 0.5px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--surface);
+    font-weight: 400;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  /* ── Link list ── */
+  .link-group {
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2.75rem;
+  }
+
+  .lnk {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-bottom: 0.5px solid var(--border);
+    background: var(--bg);
+    text-decoration: none;
+    transition: background 0.12s;
+  }
+
+  .lnk:last-child { border-bottom: none; }
+  .lnk:hover { background: var(--surface); }
+
+  .lnk-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .ic-yt  { background: #fee2e2; color: #b91c1c; }
+  .ic-sh  { background: #dcfce7; color: #15803d; }
+  .ic-gp  { background: #e0f2fe; color: #0369a1; }
+  .ic-et  { background: #fef9c3; color: #92400e; }
+  .ic-mc  { background: #fef3c7; color: #b45309; }
+  .ic-ou  { background: #ede9fe; color: #5b21b6; }
+  .ic-eb  { background: #fce7f3; color: #9d174d; }
+
+  @media (prefers-color-scheme: dark) {
+    .ic-yt  { background: #3b0f0f; color: #fca5a5; }
+    .ic-sh  { background: #0f2e1a; color: #86efac; }
+    .ic-gp  { background: #0c2233; color: #7dd3fc; }
+    .ic-et  { background: #2e2000; color: #fde68a; }
+    .ic-mc  { background: #2e1a00; color: #fcd34d; }
+    .ic-ou  { background: #1e1040; color: #c4b5fd; }
+    .ic-eb  { background: #2e0f1e; color: #f9a8d4; }
+  }
+
+  .lnk-body { flex: 1; min-width: 0; }
+  .lnk-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; display: flex; align-items: center; gap: 8px; }
+  .lnk-sub { font-size: 12px; color: var(--muted); font-weight: 300; }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    background: var(--surface);
+    color: var(--faint);
+    border: 0.5px solid var(--border);
+  }
+
+  .lnk-arrow {
+    font-size: 13px;
+    color: var(--faint);
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-reg {
+    font-size: 12px;
+    color: var(--faint);
+    font-weight: 300;
+  }
+
+  .footer-contact {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .footer-contact a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .footer-copy {
+    margin-top: 1.25rem;
+    font-size: 11px;
+    color: var(--faint);
+    font-weight: 300;
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1 class="logo">TheGoodBuysShop<span>LLC — Virginia, USA</span></h1>
+
+  <h1 class="logo">TheGoodBuysShop</h1>
+  <p class="logo-meta">LLC &mdash; Registered &middot; Virginia, USA</p>
+
   <div class="divider"></div>
-  <p class="desc">A Virginia-based company offering digital products, technology solutions, and quality goods across multiple platforms.</p>
-  <div class="grid">
-    <div class="card"><p class="card-label">Apps</p><p class="card-val">Google Play</p></div>
-    <div class="card"><p class="card-label">Digital</p><p class="card-val">Templates & Products</p></div>
-    <div class="card"><p class="card-label">Resale</p><p class="card-val">Mercari & OfferUp</p></div>
-    <div class="card"><p class="card-label">Content</p><p class="card-val">YouTube</p></div>
+
+  <p class="about">Built and run by one person — Android apps, digital templates, and curated resale across multiple platforms.</p>
+
+  <div class="pills">
+    <span class="pill">Android Apps</span>
+    <span class="pill">Digital Templates</span>
+    <span class="pill">Resale</span>
+    <span class="pill">YouTube</span>
   </div>
-  <div class="links">
-    <a class="link" href="https://youtube.com/@YD.00"><span class="dot"></span>YouTube — @YD.00</a>
-    <a class="link" href="#"><span class="dot"></span>Mercari — TheGoodBuysShop</a>
-    <a class="link" href="#"><span class="dot"></span>OfferUp — TheGoodBuysShop</a>
+
+  <p class="section-label">Platforms</p>
+  <div class="link-group">
+
+    <a class="lnk" href="https://play.google.com/store/apps/dev?id=8392958924068740879" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-gp">▶</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Google Play</p>
+        <p class="lnk-sub">Android apps by TheGoodBuysShop</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
+    <a class="lnk" href="https://www.etsy.com/shop/thegoodbuysshop" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-et">✦</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Etsy <span class="badge">Coming soon</span></p>
+        <p class="lnk-sub">Digital templates &amp; printables</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
+    <a class="lnk" href="https://www.mercari.com/u/thegoodbuysshop/?tracking_ref_id=m96755787960" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-mc">M</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Mercari</p>
+        <p class="lnk-sub">TheGoodBuysShop</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
+    <a class="lnk" href="https://offerup.com/p/5166345" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-ou">O</div>
+      <div class="lnk-body">
+        <p class="lnk-title">OfferUp</p>
+        <p class="lnk-sub">TheGoodBuysShop</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
+    <a class="lnk" href="https://www.ebay.com/usr/thegoodbuysshop" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-eb">e</div>
+      <div class="lnk-body">
+        <p class="lnk-title">eBay</p>
+        <p class="lnk-sub">TheGoodBuysShop</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
+    <a class="lnk" href="https://youtube.com/@YD.00" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-yt">▶</div>
+      <div class="lnk-body">
+        <p class="lnk-title">YouTube — @YD.00</p>
+        <p class="lnk-sub">Auto, tech &amp; coffee</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
+    <a class="lnk" href="https://www.youtube.com/@StayHomeFixIt" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-sh">▶</div>
+      <div class="lnk-body">
+        <p class="lnk-title">YouTube — @StayHomeFixIt <span class="badge">Content coming soon</span></p>
+        <p class="lnk-sub">DIY home projects</p>
+      </div>
+      <span class="lnk-arrow">↗</span>
+    </a>
+
   </div>
-  <p class="contact">Contact: <a href="mailto:support.thegoodbuysshop@gmail.com<">support.thegoodbuysshop@gmail.com</a></p>
+
+  <div class="footer">
+    <p class="footer-reg">Registered LLC &middot; Virginia, USA</p>
+    <p class="footer-contact">Contact: <a href="mailto:support.thegoodbuysshop@gmail.com">support.thegoodbuysshop@gmail.com</a></p>
+    <p class="footer-copy">&copy; 2026 TheGoodBuysShop LLC. All rights reserved.</p>
+  </div>
+
 </div>
 </body>
 </html>
