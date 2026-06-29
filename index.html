@@ -17,7 +17,7 @@
     --muted: #475569;
     --faint: #94a3b8;
     --border: #e2e8f0;
-    --surface: #f1f5f9;
+    --surface: #1e293b;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
   }
@@ -117,6 +117,7 @@
     color: var(--faint);
     margin-bottom: 14px;
     font-weight: 700;
+    margin-top: 1.5rem;
   }
 
   /* ── Link stack layout ── */
@@ -124,7 +125,7 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .lnk {
@@ -158,6 +159,7 @@
     font-weight: 500;
   }
 
+  /* ── Light Mode Icon Colors ── */
   .ic-yt  { background: #fee2e2; color: #b91c1c; }
   .ic-sh  { background: #dcfce7; color: #15803d; }
   .ic-gp  { background: #e0f2fe; color: #0369a1; }
@@ -166,7 +168,12 @@
   .ic-ou  { background: #ede9fe; color: #5b21b6; }
   .ic-eb  { background: #fce7f3; color: #9d174d; }
   .ic-tv  { background: #eff6ff; color: #1d4ed8; }
+  .ic-bmc { background: #fff7ed; color: #ea580c; }
+  .ic-vn  { background: #f0f9ff; color: #0074de; }
+  .ic-ca  { background: #e8fcf0; color: #00c853; }
+  .ic-pp  { background: #eef2ff; color: #4338ca; }
 
+  /* ── Dark Mode Icon Colors ── */
   @media (prefers-color-scheme: dark) {
     .ic-yt  { background: #3b0f0f; color: #fca5a5; }
     .ic-sh  { background: #0f2e1a; color: #86efac; }
@@ -176,6 +183,10 @@
     .ic-ou  { background: #1e1040; color: #c4b5fd; }
     .ic-eb  { background: #2e0f1e; color: #f9a8d4; }
     .ic-tv  { background: #172554; color: #93c5fd; }
+    .ic-bmc { background: #2c1405; color: #fdba74; }
+    .ic-vn  { background: #0c2233; color: #38bdf8; }
+    .ic-ca  { background: #052e16; color: #4ade80; }
+    .ic-pp  { background: #1e1b4b; color: #818cf8; }
   }
 
   .lnk-body { flex: 1; min-width: 0; }
@@ -187,9 +198,13 @@
     padding: 3px 10px;
     border-radius: 999px;
     font-weight: 500;
-    background: var(--surface);
+    background: #f1f5f9;
     color: var(--muted);
     border: 1px solid var(--border);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .badge { background: #1e293b; }
   }
 
   .lnk-arrow {
@@ -314,11 +329,11 @@
       <span class="lnk-arrow">➔</span>
     </a>
 
-    <a class="lnk" href="https://youtube.com/@YD.00" target="_blank" rel="noopener">
+    <a class="lnk" href="https://www.youtube.com/@buildsByYD" target="_blank" rel="noopener">
       <div class="lnk-icon ic-yt">▶</div>
       <div class="lnk-body">
-        <p class="lnk-title">YouTube — @YD.00</p>
-        <p class="lnk-sub">Auto, tech &amp; coffee</p>
+        <p class="lnk-title">YouTube — @buildsByYD</p>
+        <p class="lnk-sub">Tech, app development &amp; custom builds</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
@@ -328,6 +343,48 @@
       <div class="lnk-body">
         <p class="lnk-title">YouTube — @StayHomeFixIt <span class="badge">Coming soon</span></p>
         <p class="lnk-sub">DIY home projects</p>
+      </div>
+      <span class="lnk-arrow">➔</span>
+    </a>
+
+  </div>
+
+  <p class="section-label">Support My Work</p>
+  
+  <div class="link-stack">
+
+    <a class="lnk" href="https://buymeacoffee.com/thegoodbuysshop" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-bmc">☕</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Buy Me a Coffee</p>
+        <p class="lnk-sub">Support independent, ad-free application development</p>
+      </div>
+      <span class="lnk-arrow">➔</span>
+    </a>
+
+    <a class="lnk" href="https://www.venmo.com/u/TheGoodBuysShop" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-vn">📱</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Venmo</p>
+        <p class="lnk-sub">Send a direct tip via your mobile Venmo account</p>
+      </div>
+      <span class="lnk-arrow">➔</span>
+    </a>
+
+    <a class="lnk" href="https://cash.app/$TheGoodbuysShop" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-ca">💸</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Cash App</p>
+        <p class="lnk-sub">Support free software tools instantly with Cash App</p>
+      </div>
+      <span class="lnk-arrow">➔</span>
+    </a>
+
+    <a class="lnk" href="#" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-pp">💳</div>
+      <div class="lnk-body">
+        <p class="lnk-title">PayPal</p>
+        <p class="lnk-sub">Secure international and domestic developer support</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
