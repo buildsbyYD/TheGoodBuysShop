@@ -4,31 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TheGoodBuysShop LLC</title>
-<meta name="description" content="TheGoodBuysShop LLC — Android apps, digital templates, and resale. Built and run by one person." />
+<meta name="description" content="TheGoodBuysShop LLC — Android apps, Smart TV apps, digital templates, and resale. Built and run by one person." />
 <meta name="google-site-verification" content="wj04EVO8ND4NNkGh_drPdYH6cU08vMMSAAliqli1src" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #fff;
-    --text: #1a1a1a;
-    --muted: #666;
-    --faint: #aaa;
-    --border: #e5e5e5;
-    --surface: #f7f7f5;
-    --accent: #1a1a1a;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --faint: #94a3b8;
+    --border: #e2e8f0;
+    --surface: #f1f5f9;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #111;
-      --text: #f0f0f0;
-      --muted: #999;
-      --faint: #555;
-      --border: #2a2a2a;
-      --surface: #1a1a1a;
-      --accent: #f0f0f0;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --faint: #64748b;
+      --border: #334155;
+      --surface: #1e293b;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -37,18 +41,22 @@
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
 
   .wrap {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 3.5rem 1.5rem 3rem;
+    width: 100%;
+    max-width: 580px;
+    padding: 4rem 1.5rem;
   }
 
   /* ── Header ── */
   .logo {
     font-family: 'DM Serif Display', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: -0.5px;
     color: var(--text);
@@ -56,92 +64,97 @@
   }
 
   .logo-meta {
-    margin-top: 8px;
-    font-size: 11px;
+    margin-top: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--faint);
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .divider {
-    width: 32px;
-    height: 1px;
-    background: var(--faint);
-    margin: 1.75rem 0;
+    width: 40px;
+    height: 2px;
+    background: var(--text);
+    margin: 2rem 0;
+    border-radius: 2px;
   }
 
   /* ── About ── */
   .about {
-    font-size: 15px;
-    line-height: 1.85;
+    font-size: 16px;
+    line-height: 1.7;
     color: var(--muted);
-    max-width: 460px;
-    font-weight: 300;
-    margin-bottom: 2.75rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
   }
 
   /* ── Tag pills ── */
   .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 2.75rem;
+    gap: 8px;
+    margin-bottom: 3rem;
   }
 
   .pill {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border: 0.5px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
     border-radius: 999px;
     color: var(--muted);
-    background: var(--surface);
-    font-weight: 400;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
   }
 
   /* ── Section label ── */
   .section-label {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--faint);
-    margin-bottom: 10px;
-    font-weight: 500;
+    margin-bottom: 14px;
+    font-weight: 700;
   }
 
-  /* ── Link list ── */
-  .link-group {
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 2.75rem;
+  /* ── Link stack layout ── */
+  .link-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 3.5rem;
   }
 
   .lnk {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
-    border-bottom: 0.5px solid var(--border);
-    background: var(--bg);
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
     text-decoration: none;
-    transition: background 0.12s;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, background 0.2s;
   }
 
-  .lnk:last-child { border-bottom: none; }
-  .lnk:hover { background: var(--surface); }
+  .lnk:hover { 
+    background: var(--card-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
 
   .lnk-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
   }
 
@@ -166,56 +179,62 @@
   }
 
   .lnk-body { flex: 1; min-width: 0; }
-  .lnk-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; display: flex; align-items: center; gap: 8px; }
-  .lnk-sub { font-size: 12px; color: var(--muted); font-weight: 300; }
+  .lnk-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .lnk-sub { font-size: 13px; color: var(--muted); font-weight: 400; }
 
   .badge {
-    font-size: 10px;
-    padding: 2px 8px;
+    font-size: 11px;
+    padding: 3px 10px;
     border-radius: 999px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
+    font-weight: 500;
     background: var(--surface);
-    color: var(--faint);
-    border: 0.5px solid var(--border);
+    color: var(--muted);
+    border: 1px solid var(--border);
   }
 
   .lnk-arrow {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--faint);
     flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .lnk:hover .lnk-arrow {
+    transform: translateX(2px);
+    color: var(--text);
   }
 
   /* ── Footer ── */
   .footer {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
   }
 
   .footer-reg {
-    font-size: 12px;
-    color: var(--faint);
-    font-weight: 300;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
   }
 
   .footer-contact {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
-    font-weight: 300;
   }
 
   .footer-contact a {
-    color: var(--muted);
+    color: var(--text);
     text-decoration: none;
-    border-bottom: 0.5px solid var(--border);
+    font-weight: 500;
+    border-bottom: 1.5px solid var(--border);
   }
 
   .footer-copy {
-    margin-top: 1.25rem;
-    font-size: 11px;
+    margin-top: 1rem;
+    font-size: 12px;
     color: var(--faint);
-    font-weight: 300;
   }
 </style>
 </head>
@@ -238,15 +257,16 @@
   </div>
 
   <p class="section-label">Platforms</p>
-  <div class="link-group">
+  
+  <div class="link-stack">
 
     <a class="lnk" href="#" onclick="return false;" style="cursor: default;">
       <div class="lnk-icon ic-tv">📺</div>
       <div class="lnk-body">
-        <p class="lnk-title">Builds TV <span class="badge" style="color: #1d4ed8; border-color: #93c5fd;">In Review</span></p>
+        <p class="lnk-title">Builds TV <span class="badge" style="color: #1d4ed8; background: #eff6ff; border-color: #bfdbfe;">In Review</span></p>
         <p class="lnk-sub">Privacy-focused IPTV Media Player for Samsung Smart TVs</p>
       </div>
-      <span class="lnk-arrow" style="opacity: 0.3;">↗</span>
+      <span class="lnk-arrow" style="opacity: 0.3;">➔</span>
     </a>
 
     <a class="lnk" href="https://play.google.com/store/apps/dev?id=8392958924068740879" target="_blank" rel="noopener">
@@ -255,7 +275,7 @@
         <p class="lnk-title">Google Play</p>
         <p class="lnk-sub">Android apps by TheGoodBuysShop</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
     <a class="lnk" href="https://www.etsy.com/shop/thegoodbuysshop" target="_blank" rel="noopener">
@@ -264,7 +284,7 @@
         <p class="lnk-title">Etsy <span class="badge">Coming soon</span></p>
         <p class="lnk-sub">Digital templates &amp; printables</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
     <a class="lnk" href="https://www.mercari.com/u/thegoodbuysshop/?tracking_ref_id=m96755787960" target="_blank" rel="noopener">
@@ -273,7 +293,7 @@
         <p class="lnk-title">Mercari</p>
         <p class="lnk-sub">TheGoodBuysShop</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
     <a class="lnk" href="https://offerup.com/p/5166345" target="_blank" rel="noopener">
@@ -282,7 +302,7 @@
         <p class="lnk-title">OfferUp</p>
         <p class="lnk-sub">TheGoodBuysShop</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
     <a class="lnk" href="https://www.ebay.com/usr/thegoodbuysshop" target="_blank" rel="noopener">
@@ -291,7 +311,7 @@
         <p class="lnk-title">eBay</p>
         <p class="lnk-sub">TheGoodBuysShop</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
     <a class="lnk" href="https://youtube.com/@YD.00" target="_blank" rel="noopener">
@@ -300,16 +320,16 @@
         <p class="lnk-title">YouTube — @YD.00</p>
         <p class="lnk-sub">Auto, tech &amp; coffee</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
     <a class="lnk" href="https://www.youtube.com/@StayHomeFixIt" target="_blank" rel="noopener">
       <div class="lnk-icon ic-sh">▶</div>
       <div class="lnk-body">
-        <p class="lnk-title">YouTube — @StayHomeFixIt <span class="badge">Content coming soon</span></p>
+        <p class="lnk-title">YouTube — @StayHomeFixIt <span class="badge">Coming soon</span></p>
         <p class="lnk-sub">DIY home projects</p>
       </div>
-      <span class="lnk-arrow">↗</span>
+      <span class="lnk-arrow">➔</span>
     </a>
 
   </div>
