@@ -6,7 +6,7 @@
 <title>TheGoodBuysShop LLC</title>
 <meta name="description" content="TheGoodBuysShop LLC — Android apps, Smart TV apps, digital templates, and resale. Built and run by one person." />
 <meta name="google-site-verification" content="wj04EVO8ND4NNkGh_drPdYH6cU08vMMSAAliqli1src" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,22 +17,32 @@
     --muted: #475569;
     --faint: #94a3b8;
     --border: #e2e8f0;
-    --surface: #1e293b;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+    --surface: #f1f5f9;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.04);
+    
+    /* Support Brand Colors */
+    --bmc-bg: #fff7ed; --bmc-txt: #ea580c; --bmc-border: #ffedd5;
+    --ca-bg: #f0fdf4; --ca-txt: #16a34a; --ca-border: #dcfce7;
+    --vn-bg: #f0f9ff; --vn-txt: #0284c7; --vn-border: #e0f2fe;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
+      --bg: #0b1121;
+      --card-bg: #151e32;
       --text: #f8fafc;
       --muted: #cbd5e1;
       --faint: #64748b;
-      --border: #334155;
+      --border: #23314b;
       --surface: #1e293b;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      --shadow-hover: 0 16px 32px rgba(0, 0, 0, 0.3);
+      
+      /* Dark Mode Support Colors */
+      --bmc-bg: #2c1405; --bmc-txt: #fdba74; --bmc-border: #431d04;
+      --ca-bg: #052e16; --ca-txt: #4ade80; --ca-border: #064e3b;
+      --vn-bg: #082f49; --vn-txt: #38bdf8; --vn-border: #0c4a6e;
     }
   }
 
@@ -43,20 +53,24 @@
     -webkit-font-smoothing: antialiased;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
   }
 
   .wrap {
     width: 100%;
     max-width: 580px;
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
   }
 
-  /* ── Header ── */
+  /* ── Header (Centered & Modern) ── */
+  .header-area {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
   .logo {
     font-family: 'DM Serif Display', serif;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 400;
     letter-spacing: -0.5px;
     color: var(--text);
@@ -64,82 +78,122 @@
   }
 
   .logo-meta {
-    margin-top: 10px;
-    font-size: 12px;
-    letter-spacing: 2px;
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--faint);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .divider {
-    width: 40px;
-    height: 2px;
+    width: 48px;
+    height: 3px;
     background: var(--text);
-    margin: 2rem 0;
-    border-radius: 2px;
+    margin: 2rem auto;
+    border-radius: 4px;
+    opacity: 0.15;
   }
 
-  /* ── About ── */
   .about {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--muted);
     font-weight: 400;
-    margin-bottom: 3rem;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
-  /* ── Section label ── */
+  /* ── Quick Support Row (New!) ── */
+  .support-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid;
+    transition: transform 0.2s, filter 0.2s;
+  }
+  
+  .support-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .support-btn:hover { filter: brightness(1.15); }
+  }
+
+  .btn-bmc { background: var(--bmc-bg); color: var(--bmc-txt); border-color: var(--bmc-border); }
+  .btn-ca  { background: var(--ca-bg); color: var(--ca-txt); border-color: var(--ca-border); }
+  .btn-vn  { background: var(--vn-bg); color: var(--vn-txt); border-color: var(--vn-border); }
+  
+  .support-ic {
+    font-size: 16px;
+  }
+
+  /* ── Section Labels ── */
   .section-label {
-    font-size: 13px;
-    letter-spacing: 1.5px;
+    font-size: 12px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--text);
+    color: var(--muted);
     margin-bottom: 16px;
     font-weight: 700;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 
   /* ── Link stack layout ── */
   .link-stack {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    margin-bottom: 2.5rem;
+    gap: 12px;
   }
 
   .lnk {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 16px 20px;
+    padding: 18px 20px;
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px; /* Modern, softer corners */
     text-decoration: none;
     box-shadow: var(--shadow);
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, background 0.2s;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .lnk:hover { 
-    background: var(--card-bg);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
+    border-color: var(--faint);
   }
 
   .lnk-icon {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
   }
 
-  /* ── Light Mode Icon Colors ── */
+  /* ── Icon Colors ── */
   .ic-yt  { background: #fee2e2; color: #b91c1c; }
   .ic-sh  { background: #dcfce7; color: #15803d; }
   .ic-gp  { background: #e0f2fe; color: #0369a1; }
@@ -148,11 +202,7 @@
   .ic-ou  { background: #ede9fe; color: #5b21b6; }
   .ic-eb  { background: #fce7f3; color: #9d174d; }
   .ic-tv  { background: #eff6ff; color: #1d4ed8; }
-  .ic-bmc { background: #fff7ed; color: #ea580c; }
-  .ic-vn  { background: #f0f9ff; color: #0074de; }
-  .ic-ca  { background: #e8fcf0; color: #00c853; }
 
-  /* ── Dark Mode Icon Colors ── */
   @media (prefers-color-scheme: dark) {
     .ic-yt  { background: #3b0f0f; color: #fca5a5; }
     .ic-sh  { background: #0f2e1a; color: #86efac; }
@@ -162,38 +212,47 @@
     .ic-ou  { background: #1e1040; color: #c4b5fd; }
     .ic-eb  { background: #2e0f1e; color: #f9a8d4; }
     .ic-tv  { background: #172554; color: #93c5fd; }
-    .ic-bmc { background: #2c1405; color: #fdba74; }
-    .ic-vn  { background: #0c2233; color: #38bdf8; }
-    .ic-ca  { background: #052e16; color: #4ade80; }
   }
 
   .lnk-body { flex: 1; min-width: 0; }
-  .lnk-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-  .lnk-sub { font-size: 13px; color: var(--muted); font-weight: 400; }
-
-  .badge {
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-weight: 500;
-    background: #f1f5f9;
-    color: var(--muted);
-    border: 1px solid var(--border);
+  
+  .lnk-title { 
+    font-size: 15px; 
+    font-weight: 600; 
+    color: var(--text); 
+    margin-bottom: 4px; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+  }
+  
+  .lnk-sub { 
+    font-size: 13px; 
+    color: var(--muted); 
+    font-weight: 400; 
+    line-height: 1.4;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .badge { background: #1e293b; }
+  .badge {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--surface);
+    color: var(--muted);
   }
 
   .lnk-arrow {
-    font-size: 15px;
+    font-size: 18px;
     color: var(--faint);
     flex-shrink: 0;
     transition: transform 0.2s;
   }
 
   .lnk:hover .lnk-arrow {
-    transform: translateX(2px);
+    transform: translateX(4px);
     color: var(--text);
   }
 
@@ -201,15 +260,18 @@
   .footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 8px;
     border-top: 1px solid var(--border);
-    padding-top: 2rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
   }
 
   .footer-reg {
     font-size: 13px;
     color: var(--text);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .footer-contact {
@@ -220,8 +282,14 @@
   .footer-contact a {
     color: var(--text);
     text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1.5px solid var(--border);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+
+  .footer-contact a:hover {
+    border-color: var(--faint);
   }
 
   .footer-copy {
@@ -234,12 +302,26 @@
 <body>
 <div class="wrap">
 
-  <h1 class="logo">TheGoodBuysShop</h1>
-  <p class="logo-meta">LLC &mdash; Registered &middot; Virginia, USA</p>
+  <div class="header-area">
+    <h1 class="logo">TheGoodBuysShop</h1>
+    <p class="logo-meta">LLC &mdash; Registered &middot; Virginia, USA</p>
+    
+    <div class="divider"></div>
+    
+    <p class="about">Built and run by one person — Android &amp; Smart TV apps, digital templates, and curated resale across multiple platforms.</p>
 
-  <div class="divider"></div>
-
-  <p class="about">Built and run by one person — Android &amp; Smart TV apps, digital templates, and curated resale across multiple platforms.</p>
+    <div class="support-row">
+      <a class="support-btn btn-bmc" href="https://buymeacoffee.com/thegoodbuysshop" target="_blank" rel="noopener">
+        <span class="support-ic">☕</span> Buy Me a Coffee
+      </a>
+      <a class="support-btn btn-ca" href="https://cash.app/$TheGoodbuysShop" target="_blank" rel="noopener">
+        <span class="support-ic">💸</span> Cash App
+      </a>
+      <a class="support-btn btn-vn" href="https://www.venmo.com/u/TheGoodBuysShop" target="_blank" rel="noopener">
+        <span class="support-ic">📱</span> Venmo
+      </a>
+    </div>
+  </div>
 
   <p class="section-label">Apps &amp; Content</p>
   <div class="link-stack">
@@ -247,7 +329,7 @@
     <a class="lnk" href="#" onclick="return false;" style="cursor: default;">
       <div class="lnk-icon ic-tv">📺</div>
       <div class="lnk-body">
-        <p class="lnk-title">Builds TV <span class="badge" style="color: #1d4ed8; background: #eff6ff; border-color: #bfdbfe;">In Review</span></p>
+        <p class="lnk-title">Builds TV <span class="badge" style="color: #1d4ed8; background: #eff6ff;">In Review</span></p>
         <p class="lnk-sub">Privacy-focused IPTV Media Player for Samsung Smart TVs</p>
       </div>
       <span class="lnk-arrow" style="opacity: 0.3;">➔</span>
@@ -317,38 +399,6 @@
       <div class="lnk-body">
         <p class="lnk-title">Etsy <span class="badge">Coming soon</span></p>
         <p class="lnk-sub">Digital templates &amp; printables</p>
-      </div>
-      <span class="lnk-arrow">➔</span>
-    </a>
-
-  </div>
-
-  <p class="section-label">Support My Work</p>
-  <div class="link-stack">
-
-    <a class="lnk" href="https://buymeacoffee.com/thegoodbuysshop" target="_blank" rel="noopener">
-      <div class="lnk-icon ic-bmc">☕</div>
-      <div class="lnk-body">
-        <p class="lnk-title">Buy Me a Coffee</p>
-        <p class="lnk-sub">Support independent app development &amp; future updates</p>
-      </div>
-      <span class="lnk-arrow">➔</span>
-    </a>
-
-    <a class="lnk" href="https://cash.app/$TheGoodbuysShop" target="_blank" rel="noopener">
-      <div class="lnk-icon ic-ca">💸</div>
-      <div class="lnk-body">
-        <p class="lnk-title">Cash App</p>
-        <p class="lnk-sub">Send a direct tip to support my indie projects</p>
-      </div>
-      <span class="lnk-arrow">➔</span>
-    </a>
-
-    <a class="lnk" href="https://www.venmo.com/u/TheGoodBuysShop" target="_blank" rel="noopener">
-      <div class="lnk-icon ic-vn">📱</div>
-      <div class="lnk-body">
-        <p class="lnk-title">Venmo</p>
-        <p class="lnk-sub">Send a direct tip via your mobile Venmo account</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
