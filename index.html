@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheGoodBuysShop LLC</title>
-<meta name="description" content="TheGoodBuysShop LLC — Android apps, Smart TV apps, digital templates, and resale. Built and run by one person." />
+<title>Builds By YD | Apps, Tools & Digital Products</title>
+<meta name="description" content="Builds by YD — Practical software that solves everyday problems. Android apps, Smart TV apps, and custom tech builds." />
 <meta name="google-site-verification" content="wj04EVO8ND4NNkGh_drPdYH6cU08vMMSAAliqli1src" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
@@ -62,7 +62,7 @@
     padding: 5rem 1.5rem;
   }
 
-  /* ── Header (Centered & Modern) ── */
+  /* ── Header ── */
   .header-area {
     text-align: center;
     margin-bottom: 2rem;
@@ -79,18 +79,17 @@
 
   .logo-meta {
     margin-top: 12px;
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--faint);
-    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-weight: 500;
   }
 
   .divider {
     width: 48px;
     height: 3px;
     background: var(--text);
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     border-radius: 4px;
     opacity: 0.15;
   }
@@ -102,46 +101,6 @@
     font-weight: 400;
     max-width: 480px;
     margin: 0 auto;
-  }
-
-  /* ── Quick Support Row (New!) ── */
-  .support-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 2rem;
-    margin-bottom: 3.5rem;
-  }
-
-  .support-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    border-radius: 99px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid;
-    transition: transform 0.2s, filter 0.2s;
-  }
-  
-  .support-btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(0.95);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .support-btn:hover { filter: brightness(1.15); }
-  }
-
-  .btn-bmc { background: var(--bmc-bg); color: var(--bmc-txt); border-color: var(--bmc-border); }
-  .btn-ca  { background: var(--ca-bg); color: var(--ca-txt); border-color: var(--ca-border); }
-  .btn-vn  { background: var(--vn-bg); color: var(--vn-txt); border-color: var(--vn-border); }
-  
-  .support-ic {
-    font-size: 16px;
   }
 
   /* ── Section Labels ── */
@@ -169,7 +128,7 @@
     padding: 18px 20px;
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 20px; /* Modern, softer corners */
+    border-radius: 20px;
     text-decoration: none;
     box-shadow: var(--shadow);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -194,24 +153,26 @@
   }
 
   /* ── Icon Colors ── */
-  .ic-yt  { background: #fee2e2; color: #b91c1c; }
-  .ic-sh  { background: #dcfce7; color: #15803d; }
-  .ic-gp  { background: #e0f2fe; color: #0369a1; }
-  .ic-et  { background: #fef9c3; color: #92400e; }
-  .ic-mc  { background: #fef3c7; color: #b45309; }
-  .ic-ou  { background: #ede9fe; color: #5b21b6; }
-  .ic-eb  { background: #fce7f3; color: #9d174d; }
-  .ic-tv  { background: #eff6ff; color: #1d4ed8; }
+  .ic-dev  { background: #e0f2fe; color: #0369a1; }
+  .ic-tv   { background: #eff6ff; color: #1d4ed8; }
+  .ic-game { background: #ede9fe; color: #5b21b6; }
+  .ic-yt   { background: #fee2e2; color: #b91c1c; }
+  .ic-sh   { background: #dcfce7; color: #15803d; }
+  .ic-mc   { background: #fef3c7; color: #b45309; }
+  .ic-ou   { background: #fce7f3; color: #9d174d; }
+  .ic-eb   { background: #e0f2fe; color: #0369a1; }
+  .ic-et   { background: #fef9c3; color: #92400e; }
 
   @media (prefers-color-scheme: dark) {
-    .ic-yt  { background: #3b0f0f; color: #fca5a5; }
-    .ic-sh  { background: #0f2e1a; color: #86efac; }
-    .ic-gp  { background: #0c2233; color: #7dd3fc; }
-    .ic-et  { background: #2e2000; color: #fde68a; }
-    .ic-mc  { background: #2e1a00; color: #fcd34d; }
-    .ic-ou  { background: #1e1040; color: #c4b5fd; }
-    .ic-eb  { background: #2e0f1e; color: #f9a8d4; }
-    .ic-tv  { background: #172554; color: #93c5fd; }
+    .ic-dev  { background: #0c2233; color: #7dd3fc; }
+    .ic-tv   { background: #172554; color: #93c5fd; }
+    .ic-game { background: #1e1040; color: #c4b5fd; }
+    .ic-yt   { background: #3b0f0f; color: #fca5a5; }
+    .ic-sh   { background: #0f2e1a; color: #86efac; }
+    .ic-mc   { background: #2e1a00; color: #fcd34d; }
+    .ic-ou   { background: #2e0f1e; color: #f9a8d4; }
+    .ic-eb   { background: #0c2233; color: #7dd3fc; }
+    .ic-et   { background: #2e2000; color: #fde68a; }
   }
 
   .lnk-body { flex: 1; min-width: 0; }
@@ -256,6 +217,45 @@
     color: var(--text);
   }
 
+  /* ── Quick Support Row ── */
+  .support-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 3.5rem;
+  }
+
+  .support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid;
+    transition: transform 0.2s, filter 0.2s;
+  }
+  
+  .support-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .support-btn:hover { filter: brightness(1.15); }
+  }
+
+  .btn-bmc { background: var(--bmc-bg); color: var(--bmc-txt); border-color: var(--bmc-border); }
+  .btn-ca  { background: var(--ca-bg); color: var(--ca-txt); border-color: var(--ca-border); }
+  .btn-vn  { background: var(--vn-bg); color: var(--vn-txt); border-color: var(--vn-border); }
+  
+  .support-ic {
+    font-size: 16px;
+  }
+
   /* ── Footer ── */
   .footer {
     display: flex;
@@ -296,6 +296,7 @@
     margin-top: 1rem;
     font-size: 12px;
     color: var(--faint);
+    line-height: 1.6;
   }
 </style>
 </head>
@@ -303,46 +304,66 @@
 <div class="wrap">
 
   <div class="header-area">
-    <h1 class="logo">TheGoodBuysShop</h1>
-    <p class="logo-meta">LLC &mdash; Registered &middot; Virginia, USA</p>
+    <h1 class="logo">Builds By YD</h1>
+    <p class="logo-meta">Android &bull; Smart TV &bull; Custom Builds</p>
     
     <div class="divider"></div>
     
-    <p class="about">Built and run by one person — Android &amp; Smart TV apps, digital templates, and curated resale across multiple platforms.</p>
-
-    <div class="support-row">
-      <a class="support-btn btn-bmc" href="https://buymeacoffee.com/thegoodbuysshop" target="_blank" rel="noopener">
-        <span class="support-ic">☕</span> Buy Me a Coffee
-      </a>
-      <a class="support-btn btn-ca" href="https://cash.app/$TheGoodbuysShop" target="_blank" rel="noopener">
-        <span class="support-ic">💸</span> Cash App
-      </a>
-      <a class="support-btn btn-vn" href="https://www.venmo.com/u/TheGoodBuysShop" target="_blank" rel="noopener">
-        <span class="support-ic">📱</span> Venmo
-      </a>
-    </div>
+    <p class="about">We build practical software that solves everyday problems. Explore active projects, tech content, and our online shops.</p>
   </div>
 
-  <p class="section-label">Apps &amp; Content</p>
+  <p class="section-label">Featured Projects</p>
   <div class="link-stack">
+
+    <a class="lnk" href="https://play.google.com/store/apps/details?id=com.gbs.cashtrack" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-dev">💸</div>
+      <div class="lnk-body">
+        <p class="lnk-title">CashTrack: Expense Tracker <span class="badge" style="color: #16a34a; background: #f0fdf4;">Live</span></p>
+        <p class="lnk-sub">Personal finance made simple.</p>
+      </div>
+      <span class="lnk-arrow">➔</span>
+    </a>
+
+    <a class="lnk" href="https://play.google.com/store/apps/details?id=com.gbs.snakeabyss" target="_blank" rel="noopener">
+      <div class="lnk-icon ic-game">🐍</div>
+      <div class="lnk-body">
+        <p class="lnk-title">Snake Abyss: Infinite Descent <span class="badge" style="color: #16a34a; background: #f0fdf4;">Live</span></p>
+        <p class="lnk-sub">A deep-sea twist on classic snake. Navigate the pitch-black waters and build massive combos.</p>
+      </div>
+      <span class="lnk-arrow">➔</span>
+    </a>
 
     <a class="lnk" href="#" onclick="return false;" style="cursor: default;">
       <div class="lnk-icon ic-tv">📺</div>
       <div class="lnk-body">
-        <p class="lnk-title">Builds TV <span class="badge" style="color: #1d4ed8; background: #eff6ff;">In Review</span></p>
-        <p class="lnk-sub">Privacy-focused IPTV Media Player for Samsung Smart TVs</p>
+        <p class="lnk-title">Builds TV <span class="badge" style="color: #1d4ed8; background: #eff6ff;">🧪 Beta</span></p>
+        <p class="lnk-sub">Modern, privacy-focused IPTV Media Player for Samsung Smart TVs.</p>
+      </div>
+      <span class="lnk-arrow" style="opacity: 0.3;">➔</span>
+    </a>
+
+    <a class="lnk" href="#" onclick="return false;" style="cursor: default;">
+      <div class="lnk-icon ic-dev">🚧</div>
+      <div class="lnk-body">
+        <p class="lnk-title">TripKit <span class="badge">In Development</span></p>
+        <p class="lnk-sub">Travel planning without the clutter. Coming soon.</p>
       </div>
       <span class="lnk-arrow" style="opacity: 0.3;">➔</span>
     </a>
 
     <a class="lnk" href="https://play.google.com/store/apps/dev?id=8392958924068740879" target="_blank" rel="noopener">
-      <div class="lnk-icon ic-gp">▶</div>
+      <div class="lnk-icon ic-dev">▶</div>
       <div class="lnk-body">
-        <p class="lnk-title">Google Play</p>
-        <p class="lnk-sub">Android apps by BuildsByYD</p>
+        <p class="lnk-title">View All on Google Play</p>
+        <p class="lnk-sub">See the full library of Android apps by BuildsByYD.</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
+
+  </div>
+
+  <p class="section-label">Content</p>
+  <div class="link-stack">
 
     <a class="lnk" href="https://www.youtube.com/@buildsByYD" target="_blank" rel="noopener">
       <div class="lnk-icon ic-yt">▶</div>
@@ -364,14 +385,14 @@
 
   </div>
 
-  <p class="section-label">Shop &amp; Resale</p>
+  <p class="section-label">Shop &amp; Resale (TheGoodBuysShop)</p>
   <div class="link-stack">
 
     <a class="lnk" href="https://www.mercari.com/u/thegoodbuysshop/?tracking_ref_id=m96755787960" target="_blank" rel="noopener">
       <div class="lnk-icon ic-mc">M</div>
       <div class="lnk-body">
         <p class="lnk-title">Mercari</p>
-        <p class="lnk-sub">TheGoodBuysShop</p>
+        <p class="lnk-sub">Everyday items and general goods</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
@@ -380,7 +401,7 @@
       <div class="lnk-icon ic-ou">O</div>
       <div class="lnk-body">
         <p class="lnk-title">OfferUp</p>
-        <p class="lnk-sub">TheGoodBuysShop</p>
+        <p class="lnk-sub">Local pickups and everyday finds</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
@@ -389,7 +410,7 @@
       <div class="lnk-icon ic-eb">e</div>
       <div class="lnk-body">
         <p class="lnk-title">eBay</p>
-        <p class="lnk-sub">TheGoodBuysShop</p>
+        <p class="lnk-sub">A little bit of everything</p>
       </div>
       <span class="lnk-arrow">➔</span>
     </a>
@@ -405,10 +426,22 @@
 
   </div>
 
+  <div class="support-row">
+    <a class="support-btn btn-bmc" href="https://buymeacoffee.com/thegoodbuysshop" target="_blank" rel="noopener">
+      <span class="support-ic">☕</span> Buy Me a Coffee
+    </a>
+    <a class="support-btn btn-ca" href="https://cash.app/$TheGoodbuysShop" target="_blank" rel="noopener">
+      <span class="support-ic">💸</span> Cash App
+    </a>
+    <a class="support-btn btn-vn" href="https://www.venmo.com/u/TheGoodBuysShop" target="_blank" rel="noopener">
+      <span class="support-ic">📱</span> Venmo
+    </a>
+  </div>
+
   <div class="footer">
-    <p class="footer-reg">Registered LLC &middot; Virginia, USA</p>
+    <p class="footer-reg">Builds By YD</p>
     <p class="footer-contact">Contact: <a href="mailto:support.thegoodbuysshop@gmail.com">support.thegoodbuysshop@gmail.com</a></p>
-    <p class="footer-copy">&copy; 2026 TheGoodBuysShop LLC. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2026 Builds By YD. <br>A brand of TheGoodBuysShop LLC. All rights reserved.</p>
   </div>
 
 </div>
